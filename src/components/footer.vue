@@ -49,7 +49,6 @@ export default{
         height: 100vh;
         padding-top: 30px;
         background-color: white;
-        border-top:22px var(--rxSecondary) solid;
         clip-path: polygon(0 20%, 100% 1%, 100% 100%, 0% 100%);
         max-height:250px;
     }
@@ -57,6 +56,7 @@ export default{
         display: flex;
         justify-content: space-between;
         flex-direction: row;
+        margin-top: 20px;
         transform: rotate(-1.3deg);
         width: 100%;
         max-width: var(--maxw);
@@ -122,6 +122,7 @@ export default{
         width: 45px;
         background-color: red;
         height: 45px;
+        cursor:pointer;
         background: url('../imgs/icons/sociais.svg') no-repeat;
         background-size:cover;
     }

@@ -22,10 +22,9 @@
 <style scoped>
 #card{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
-    max-width: 360px;
-    max-height: 320px;
+    padding-bottom: 20px;
     width: 100%;
     height: 100%;
     transform: skew(-3deg);
@@ -49,12 +48,11 @@
 }
 .card-box{
     max-width: 270px;
-    max-height: 290px;
+    max-height: 320px;
     height: 100%;
     width: 100%;
     z-index: 0;
     margin:0 auto;
-    border-radius: 5px;
     background-color: white;
     -webkit-box-shadow: 10px 9px 5px -5px rgba(182, 182, 182, 0.1);
     -moz-box-shadow: 10px 9px 5px -5px rgba(182, 182, 182, 0.1);
@@ -68,7 +66,7 @@
     scale: 1.1;
 }
 .card-box h1{
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     letter-spacing: 2px;
     color: var(--darkgray);
     font-family: "Roboto",sans-serif;
@@ -86,4 +84,5 @@
     color:#444;
     text-align: center;
 } 
+
 </style>
