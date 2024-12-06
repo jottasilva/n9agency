@@ -7,7 +7,7 @@ SECRET_KEY = 'django-insecure-*3uvf89xscb^vtalequg+4vdg!)682e(*1psn!rvnr^er)c()f
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['37ed-170-233-6-221.ngrok-free.app']
 
 INSTALLED_APPS = [
     'corsheaders',
