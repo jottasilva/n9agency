@@ -28,6 +28,7 @@
   <script>
   import apiService, { url_api } from '@/services/apiService';
   export default {
+    
     data() {
       return {
         email: '', 
@@ -43,6 +44,7 @@
         const formattedTime = date.toLocaleTimeString('pt-BR', optionsTime);
         return `${formattedDate}\n${formattedTime}`;
          },
+         
       async listArchives() {
         console.log("Buscando arquivos para o e-mail: " + this.email); 
         try {

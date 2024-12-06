@@ -35,6 +35,9 @@
             
         },
         async created() {
+            const response = await apiService.getArchives(this.email); 
+console.log('Dados recebidos da API:', response.data);
+this.archives = response.data;
             try {
                 const response = await apiService.getInfo();
                 this.info = response.data;
