@@ -1,19 +1,21 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "dist/**/*",
-        "use": "@vercel/static"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "dist/$1"
-      }
-    ],
-      "rewrites": [
-        { "source": "/(.*)", "destination": "/index.html" }
+  "rewrites": [
+    {
+      "source": "/old-url",
+      "destination": "/new-url"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=3600"
+        }
       ]
-    
-  }
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": true
+}
