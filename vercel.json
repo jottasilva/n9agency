@@ -7,7 +7,7 @@
   ],
   "headers": [
     {
-      "source": "src/**/*",
+      "source": "dist/**/*",
       "headers": [
         {
           "key": "Cache-Control",
