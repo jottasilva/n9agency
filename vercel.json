@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/config",
-      "dest": "https://37ed-170-233-6-221.ngrok-free.app"
+      "source": "/old-url",
+      "destination": "https://37ed-170-233-6-221.ngrok-free.app"
     }
   ],
   "headers": [
