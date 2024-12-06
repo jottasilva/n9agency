@@ -16,14 +16,14 @@
     export default{
         name:'my-Phrase',
         data(){
-           return{
-                info:[],
-                phrase: String || 'CONECTANDO',
-                sub_phrase: String|| 'NEGÓCIOS',
-                middle_phrase: String|| 'IDÉIAS, TRANSFORMANDO',
-                img:  url_api+'/media/images/slide.svg',
-                desc_phrase: String || 'levamos sua marca além dos limites com estratégias criativas e soluções digitais inovadoras.',
-           }
+        return{
+         info: [],
+         phrase: 'CONECTANDO', // Inicialize com uma string padrão
+         sub_phrase: 'NEGÓCIOS', // Inicialize com uma string padrão
+         middle_phrase: 'IDÉIAS, TRANSFORMANDO', // Inicialize com uma string padrão
+         img:  url_api+'/media/images/slide.svg',
+         desc_phrase: 'levamos sua marca além dos limites com estratégias criativas e soluções digitais inovadoras.',
+            }
         },
         computed: {
             backgroundStyle() {
@@ -36,17 +36,17 @@
         },
         async created() {
             try {
-            const response = await apiService.getInfo();
-            this.info = response.data;
-            this.info.map(()=>{
-                this.phrase = this.info[0].phrase;
-                this.sub_phrase = this.info[0].sub_phrase;
-                this.middle_phrase = this.info[0].middle_phrase;
-                this.img = url_api+'/media/'+this.info[0].img;
-                this.desc_phrase = this.info[0].desc_phrase;
-            });
+                const response = await apiService.getInfo();
+                this.info = response.data;
+                if (this.info.length > 0) {
+                    this.phrase = this.info[0].phrase;
+                    this.sub_phrase = this.info[0].sub_phrase;
+                    this.middle_phrase = this.info[0].middle_phrase;
+                    this.img = url_api + '/media/' + this.info[0].img;
+                    this.desc_phrase = this.info[0].desc_phrase;
+                }
             } catch (error) {
-            console.error('Erro ao buscar Informações:', error);
+                console.error('Erro ao buscar Informações:', error);
             }
         },
       
