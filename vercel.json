@@ -1,21 +1,21 @@
 {
-  "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "package.json",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "dist/**/*",
-      "use": "@vercel/static"
+      "source": "/old-url",
+      "destination": "/new-url"
     }
   ],
-  "routes": [
+  "headers": [
     {
-      "src": "/(.*)",
-      "dest": "/dist/$1"
+      "source": "src/**/*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=3600"
+        }
+      ]
     }
   ],
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": true
 }
