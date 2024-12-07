@@ -7,8 +7,30 @@ SECRET_KEY = 'django-insecure-*3uvf89xscb^vtalequg+4vdg!)682e(*1psn!rvnr^er)c()f
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['37ed-170-233-6-221.ngrok-free.app']
+CORS_ALLOWED_ORIGINS = [
+    'https://n9agency.vercel.app' # Permite requisições de seu domínio
+]
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'OPTIONS',
+    'PUT',
+    'PATCH',
+    'DELETE',
+]
+CORS_ALLOW_CREDENTIALS = True
 
+ALLOWED_HOSTS = ['*']
+
+CORS_ALLOW_HEADERS = [
+    'content-type',
+    'authorization',
+    'x-requested-with',
+    'accept',
+    'origin',
+    'x-csrftoken',
+]
+CORS_ALLOW_CREDENTIALS = True
 INSTALLED_APPS = [
     'corsheaders',
     'django.contrib.admin',
@@ -24,8 +46,6 @@ INSTALLED_APPS = [
 
 FILE_UPLOAD_MAX_MEMORY_SIZE = 10485760
 
-CORS_ALLOWED_ORIGINS = ['37ed-170-233-6-221.ngrok-free.app']
-
 ALLOWED_EXTENSIONS = ['jpg', 'jpeg', 'png', 'gif', 'svg']
 
 DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
@@ -38,6 +58,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
